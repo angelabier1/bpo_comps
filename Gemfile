@@ -27,6 +27,9 @@ gem 'sendgrid'
 gem 'simple_form'
 gem 'unicorn'
 gem 'unicorn-rails'
+gem "watir-rspec"
+gem 'watir-rails'
+gem 'smarter_csv'
 group :development do
   gem 'better_errors'
   gem 'capistrano', '~> 3.0.1'
