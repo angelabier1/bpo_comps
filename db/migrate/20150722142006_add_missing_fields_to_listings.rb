@@ -1,0 +1,56 @@
+class AddMissingFieldsToListings < ActiveRecord::Migration
+  def change
+    add_column :listings, :selling_office_name, :string
+    add_column :listings, :studio_dimensions, :string
+    add_column :listings, :subdivision_num, :string
+    add_column :listings, :subdivision_section_number, :integer
+    add_column :listings, :sw_subdiv_community_name, :string
+    add_column :listings, :sw_subdiv_condo_num, :string
+    add_column :listings, :taxes, :integer
+    add_column :listings, :tax_year, :integer
+    add_column :listings, :team_name, :string
+    add_column :listings, :temp_off_market_date, :datetime
+    add_column :listings, :third_party_yn, :boolean
+    add_column :listings, :total_acreage, :string
+    add_column :listings, :total_monthly_expenses, :integer
+    add_column :listings, :total_monthly_rent, :integer
+    add_column :listings, :total_num_buildings, :integer
+    add_column :listings, :total_units, :integer
+    add_column :listings, :township, :string
+    add_column :listings, :trans_broker_comp, :string
+    add_column :listings, :transportation_access, :text
+    add_column :listings, :unit_count, :integer
+    add_column :listings, :unit_number, :string
+    add_column :listings, :units, :integer
+    add_column :listings, :use_code, :string
+    add_column :listings, :utilities, :text
+    add_column :listings, :virtual_tour_link, :string
+    add_column :listings, :virtual_tour_url_2, :string
+    add_column :listings, :vowavmyn, :boolean
+    add_column :listings, :warehouse_space_heated, :integer
+    add_column :listings, :warehouse_space_total, :integer
+    add_column :listings, :water_access, :text
+    add_column :listings, :water_access_yn, :boolean
+    add_column :listings, :water_extras, :text
+    add_column :listings, :water_extras_yn, :boolean
+    add_column :listings, :water_frontage, :text
+    add_column :listings, :water_frontage_yn, :boolean
+    add_column :listings, :waterfront_feet, :integer
+    add_column :listings, :water_name, :string
+    add_column :listings, :water_view, :text
+    add_column :listings, :water_view_yn, :boolean
+    add_column :listings, :web_hyperlink_1, :string
+    add_column :listings, :web_hyperlink_2, :string
+    add_column :listings, :weeks_available_2011, :text
+    add_column :listings, :weeks_available_2012, :text
+    add_column :listings, :weeks_available_2013, :text
+    add_column :listings, :weeks_available_2014, :text
+    add_column :listings, :weeks_available_2015, :text
+    add_column :listings, :window_coverings, :text
+    add_column :listings, :withdrawn_date, :datetime
+    add_column :listings, :year_built, :integer
+    add_column :listings, :yrs_of_owner_prior_to_leasing_re, :boolean
+    add_column :listings, :zoning, :string
+    add_column :listings, :zoning_compatible_yn, :boolean
+  end
+end
