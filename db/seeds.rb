@@ -11,8 +11,9 @@ puts 'CREATED ADMIN USER: ' << user.email
 # See http://railsapps.github.io/rails-environment-variables.html
 1000.times do |n|
 	while Listing.count < 1000 do
-
-		listings = Listing.new.active
+		client = CreateRetsService.new.call
+		client.login
+		listings =  client.find("ACT",)
 		listings.each do |listing|
 			Listing.find_by_matrix_unique_id(listing['Matrix_Unique_ID']) ||
 				Listing.create(

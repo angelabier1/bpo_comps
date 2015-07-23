@@ -25,6 +25,24 @@ require 'rets'
 			$client.login
 		end
 
+		QUERY = "(Status=|ACT),(PropertyType=|RES),(CountyOrParish=| Orange,Osceola)"
+		#Status Options: ACT, PNC, SLD, LSE,
+		#Property Types:
+		#Counties:
+		# "Alachua,Baker,Bay,Bradford,Brevard,Broward,Calhoun,Charlotte,Citrus,Clay,Collier,Columbia,Dade,DeSoto,Dixie,Duval,
+		# Escambia,Flagler,Franklin,Gadsen,Gilchrist,Glades,Gulf,Hamilton,Hardee,Hendry,Hernando,Highlands,Hillsborough,Holmes,
+		# IndianRiver,Jackson,Jefferson,Lafayette,Lake,Lee,Leon,Levy,Liberty,Madison,Manatee,Marion,Monroe,Nassau,Okaloosa,
+		# Okeechobee,Orange,Osceola,Other,OutofArea,PalmBeach,Pasco,Pinellas,Polk,Putnam,Sarasota,Seminole,StJohns,Union,Volusia"
+
+		def find(status,property_type, counties=[])
+			query = '(Status=|"#{status}"),(PropertyType=|"#{property_type}"),(CountyOrParish=|"#{counties}")'
+			$client.login
+			$client.find :all, {
+				                 search_type: 'Property',
+				                 class: 'Listing',
+				                 query: "#{query}"
+			                 }
+		end
 
 		def logout
 			$client.logout
